@@ -14,12 +14,12 @@ stages:
 
 jobs:
   include:
-    - stage: format
-      script: sbt scalafmt::test
+    #- stage: format
+      #script: sbt scalafmt::test
     - stage: test
       script:
         - sbt ++$TRAVIS_SCALA_VERSION clean coverage +coreJVM/test coverageReport
-        - sbt validateScalafmt
+        #- sbt validateScalafmt
         #- sbt example/compile
     #- stage: release
       #script: sbt ci-release
