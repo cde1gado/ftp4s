@@ -1,12 +1,13 @@
 package org.pure4s.ftp4s
 
 import cats.effect.IO
-import implicits._
+import org.apache.commons.net.ftp.FTPClient
 import org.scalatest._
 
 class FFTPApacheIntegrationSpec extends FunSpec with BeforeAndAfter with Matchers with Fixtures {
+  import FTP._
 
-  val fftp = FFTP[IO]
+  val fftp: FFTP[IO, FTPClient] = FFTP[IO, FTPClient]
 
   before {
     FakeFTPServerManager.start(config, List(("/file1.txt", "hello!")))
@@ -20,7 +21,7 @@ class FFTPApacheIntegrationSpec extends FunSpec with BeforeAndAfter with Matcher
 
     it ("should return true when isConnected() if connect() is successful") {
       val fResult =
-        fftp.withFTP(config)(fftp.init) { conn =>
+        fftp.withFTP(config) { conn =>
           (for {
             isConnected <- fftp.isConnected()
           } yield isConnected).runA(conn)

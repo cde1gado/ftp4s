@@ -2,7 +2,7 @@ package org.pure4s.ftp4s
 
 object model {
 
-  case class FTPConn[S <: FTPState, A](ftpClient: A)
+  case class FTPConn[S <: FTPState, A](ftp: A)
 
   sealed trait FTPState
   trait New extends FTPState
