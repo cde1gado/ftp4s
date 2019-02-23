@@ -23,3 +23,6 @@ jobs:
         #- sbt example/compile
     #- stage: release
       #script: sbt ci-release
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
