@@ -3,9 +3,8 @@ package org.pure4s.ftp4s
 import cats.effect.IO
 import org.pure4s.ftp4s.model._
 import org.scalatest._
-import org.scalatest.mockito.MockitoSugar
 
-class FFTPApacheSpec extends FunSpec with Matchers with MockitoSugar with Fixtures {
+class FFTPApacheSpec extends FunSpec with Matchers with Fixtures {
 
   describe("isConnected()") {
 
