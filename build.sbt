@@ -23,7 +23,6 @@ lazy val V = new {
   val apacheCommonsNet = "3.6"
   val scalaTestVersion = "3.0.5"
   val mockFtpServer = "2.7.1"
-  val mockitoAll = "1.10.19"
   val macroParadiseVersion = "2.1.1"
   val kindProjectorVersion = "0.9.9"
 }
@@ -49,7 +48,6 @@ val commonDependencies = Seq(
     "commons-net" % "commons-net" % V.apacheCommonsNet,
     "org.scalatest" %% "scalatest"   % V.scalaTestVersion,
     "org.mockftpserver" % "MockFtpServer" % V.mockFtpServer,
-    "org.mockito" % "mockito-all" % V.mockitoAll
   )
 )
 
